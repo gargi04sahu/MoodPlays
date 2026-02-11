@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "leaflet/dist/leaflet.css";
+
+/* Design System for Ads - Smart Nearby Places Recommender */
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 245 58% 51%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 245 58% 95%;
+    --accent-foreground: 245 58% 51%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 245 58% 51%;
+
+    --radius: 0.75rem;
+
+    /* Mood colors */
+    --mood-work: 245 58% 51%;
+    --mood-date: 340 82% 52%;
+    --mood-quick: 32 95% 44%;
+    --mood-budget: 142 71% 45%;
+    --mood-sad: 199 89% 48%;
+    --mood-fun: 280 68% 60%;
+
+    /* Status colors */
+    --status-open: 142 71% 45%;
+    --status-closed: 0 84% 60%;
+    --status-warning: 38 92% 50%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 245 58% 51%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 245 58% 95%;
+    --sidebar-accent-foreground: 245 58% 51%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 245 58% 51%;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 245 58% 61%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 245 40% 20%;
+    --accent-foreground: 245 58% 70%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 245 58% 61%;
+
+    /* Mood colors - slightly brighter for dark mode */
+    --mood-work: 245 58% 61%;
+    --mood-date: 340 82% 62%;
+    --mood-quick: 32 95% 54%;
+    --mood-budget: 142 71% 55%;
+    --mood-sad: 199 89% 58%;
+    --mood-fun: 280 68% 70%;
+
+    --sidebar-background: 222 47% 9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 245 58% 61%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 245 40% 20%;
+    --sidebar-accent-foreground: 245 58% 70%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 245 58% 61%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border transition-colors duration-300;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased transition-colors duration-300;
+  }
+
+  /* Leaflet container fix */
+  .leaflet-container {
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 0;
+  }
+  
+  .leaflet-pane,
+  .leaflet-map-pane,
+  .leaflet-tile-pane {
+    z-index: 0;
+  }
+  
+  .leaflet-top,
+  .leaflet-bottom {
+    z-index: 10 !important;
+  }
+  
+  .leaflet-control {
+    z-index: 10 !important;
+  }
+
+  /* Leaflet overrides for dark mode */
+  .dark .leaflet-container {
+    background: hsl(222 47% 9%);
+  }
+
+  .dark .leaflet-tile {
+    filter: invert(1) hue-rotate(180deg) brightness(0.95) contrast(0.9);
+  }
+
+  .dark .leaflet-control-zoom a {
+    background: hsl(222 47% 9%);
+    color: hsl(210 40% 98%);
+    border-color: hsl(217 33% 17%);
+  }
+
+  .dark .leaflet-control-zoom a:hover {
+    background: hsl(217 33% 17%);
+  }
+
+  .dark .leaflet-popup-content-wrapper,
+  .dark .leaflet-popup-tip {
+    background: hsl(222 47% 9%);
+    color: hsl(210 40% 98%);
+  }
+
+  .dark .leaflet-popup-content-wrapper {
+    border: 1px solid hsl(217 33% 17%);
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+}

@@ -1,0 +1,10 @@
+project_id = "qrrlrslzqgwruidownjl"
+
+[functions.search-places]
+verify_jwt = false
+
+[functions.get-place-details]
+verify_jwt = false
+
+[functions.why-this-place]
+verify_jwt = false

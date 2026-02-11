@@ -1,4 +1,6 @@
-# 🎧 MoodPlays  
+# Welcome to your Lovable project
+
+### 🎧 MoodPlays  ###
 *A mood-based nearby places discovery app*
 
 MoodPlays helps users discover cafés and restaurants based on **how they feel**, not just where they are.  
@@ -16,7 +18,7 @@ Instead of endless scrolling, users simply select their mood and get nearby plac
   - 💸 Budget
   - 😌 Chill
   - 🎉 Fun
-
+  
 - 🗺️ View places with:
   - Ratings & reviews  
   - Distance from current location  
@@ -24,9 +26,8 @@ Instead of endless scrolling, users simply select their mood and get nearby plac
   - Popular times  
   - Satellite map view  
   - One-click Google Maps directions
-  
 - ❤️ Wishlist & feedback support
-- 🔐 Optional login support — app works seamlessly without signing in
+- 🚫 No login required — frictionless UX
 
 ---
 
@@ -34,7 +35,6 @@ Instead of endless scrolling, users simply select their mood and get nearby plac
 
 - **Frontend**: React, TypeScript
 - **Styling**: Tailwind CSS, shadcn-ui
-- **Backend & Auth**: Supabase (Database & Authentication)
 - **Build Tool**: Vite
 - **Maps & Data**: OpenStreetMap API
 - **AI-assisted Development**: Lovable.ai
@@ -45,7 +45,7 @@ Instead of endless scrolling, users simply select their mood and get nearby plac
 
 ```sh
 # Clone the repository
-git clone https://github.com/gargi04sahu/moodplays.git
+git clone <YOUR_GITHUB_REPO_URL>
 
 # Navigate to the project directory
 cd moodplays
@@ -55,4 +55,14 @@ npm install
 
 # Start the development server
 npm run dev
+```
 
+## What technologies are used for this project?
+
+This project is built with:
+
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
